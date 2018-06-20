@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Environment
+BUILDDIR="$(pwd)"
+TMPDIR=$(mktemp -d)
+pushd ${TMPDIR}
+TENV_NOPROMPT=1
+
+# Test A
+if [[ "$VIRTUAL_ENV" != "" ]]; then
+  echo "test001: already in a virtual environment."
+  exit 1
+fi
+
+# Test B
+source "${BUILDDIR}/tenv"
+if [[ "$VIRTUAL_ENV" == "" ]]; then
+  echo "test001: not able to activate virtual environment."
+  exit 1
+fi
+
+# Test C
+source "${BUILDDIR}/tenv"
+if [[ "$VIRTUAL_ENV" != "" ]]; then
+  echo "test001: not able to deactivate virtual environment."
+  exit 1
+fi
+
+# Cleanup
+popd
+rm -rf ${TMPDIR}
+exit 0
