@@ -2,14 +2,14 @@ language:
   - c
 
 sudo:
-  - false
+  - true
 
 os:
   - linux
   - osx
 
 install:
-  - pip install --user virtualenv
+  - sudo pip install virtualenv
 
 script:
   - mkdir -p build
