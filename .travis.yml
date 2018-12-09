@@ -8,6 +8,9 @@ os:
   - linux
   - osx
 
+install:
+  - pip install --user virtualenv
+
 script:
   - mkdir -p build
   - cd build
