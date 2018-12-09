@@ -32,7 +32,7 @@ Installation
 ============
 Pre-requisites (Ubuntu, Mac):
 
-    sudo pip install virtualenv
+    pip install --user virtualenv
 
 Download the source code:
 
