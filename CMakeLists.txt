@@ -1,6 +1,6 @@
 # Project
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
-project(tenv VERSION 1.0)
+project(tenv)
 
 # Program
 configure_file(src/tenv ${CMAKE_CURRENT_BINARY_DIR}/tenv COPYONLY)
