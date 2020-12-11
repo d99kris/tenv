@@ -70,7 +70,7 @@ if [[ "${DEPS}" == "1" ]]; then
   if [ "${OS}" == "Linux" ]; then
     DISTRO="$(lsb_release -i | awk -F':\t' '{print $2}')"
     if [[ "${DISTRO}" == "Ubuntu" ]]; then
-      pip3 install -U virtualenv || exiterr "deps failed (linux), exiting."
+      sudo pip3 install virtualenv || exiterr "deps failed (linux), exiting."
     else
       exiterr "deps failed (unsupported linux distro ${DISTRO}), exiting."
     fi
