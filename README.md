@@ -1,9 +1,9 @@
 Tenv
 ====
 
-| **Linux + Mac** |
-|-----------------|
-| [![Build status](https://travis-ci.com/d99kris/tenv.svg?branch=master)](https://travis-ci.com/d99kris/tenv) |
+| **Linux** | **Mac** |
+|-----------|---------|
+| [![Linux](https://github.com/d99kris/tenv/workflows/Linux/badge.svg)](https://github.com/d99kris/tenv/actions?query=workflow%3ALinux) | [![macOS](https://github.com/d99kris/tenv/workflows/macOS/badge.svg)](https://github.com/d99kris/tenv/actions?query=workflow%3AmacOS) |
 
 Tenv - toggle python virtual environment - is a simple tool to toggle enabling/disabling a python
 virtual environment.
