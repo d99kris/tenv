@@ -26,7 +26,10 @@ Example Usage
 
 Supported Platforms
 ===================
-Tenv is primarily developed and tested on Linux, but basic functionality should work on Mac as well.
+Tenv is primarily developed and tested on Linux, but basic functionality
+should work in macOS as well. Current version has been tested on:
+- macOS Big Sur 11.0
+- Ubuntu 20.04 LTS
 
 Installation
 ============
@@ -82,5 +85,4 @@ Tenv is distributed under the MIT license. See LICENSE file.
 
 Keywords
 ========
-toggle,virtualenv
-
+toggle, virtualenv
