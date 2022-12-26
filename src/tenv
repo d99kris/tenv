@@ -2,7 +2,7 @@
 
 # tenv - toggle python virtual environment
 #
-# Copyright (c) 2018, Kristofer Berggren
+# Copyright (c) 2018-2022, Kristofer Berggren
 # All rights reserved.
 #
 
@@ -29,9 +29,9 @@ showusage()
 
 showversion()
 {
-  echo "tenv v1.02"
+  echo "tenv v1.03"
   echo ""
-  echo "Copyright (C) 2018 Kristofer Berggren"
+  echo "Copyright (C) 2018-2022 Kristofer Berggren"
   echo ""
   echo "tenv is distributed under the MIT license."
   echo ""
