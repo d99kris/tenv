@@ -2,7 +2,7 @@
 
 # tenv - toggle python virtual environment
 #
-# Copyright (c) 2018-2022, Kristofer Berggren
+# Copyright (c) 2018-2024, Kristofer Berggren
 # All rights reserved.
 #
 
@@ -10,7 +10,7 @@
 showusage()
 {
   echo "tenv toggles enabling/disabling python virtual environment."
-  echo "When environment path is not specified, it uses .env as default."
+  echo "When environment path is not specified, it uses .venv as default."
   echo "For simplest operation it is recommended setting up an alias"
   echo "for the command:"
   echo "   alias tenv=\". \`which tenv\`\""
@@ -29,9 +29,9 @@ showusage()
 
 showversion()
 {
-  echo "tenv v1.03"
+  echo "tenv v1.04"
   echo ""
-  echo "Copyright (C) 2018-2022 Kristofer Berggren"
+  echo "Copyright (C) 2018-2024 Kristofer Berggren"
   echo ""
   echo "tenv is distributed under the MIT license."
   echo ""
@@ -46,7 +46,7 @@ elif [[ "${1}" == "--version" ]]; then
 elif [[ "${1}" != "" ]]; then
   VENVPATH="${1}"
 else
-  VENVPATH=".env"
+  VENVPATH=".venv"
 fi
 
 # Toggle environment
@@ -56,18 +56,13 @@ if [[ "${VENVPATH}" != "" ]]; then
       deactivate
     else
       if [[ ! -d "${VENVPATH}" ]]; then
-        which virtualenv &> /dev/null
-        if [[ "${?}" != "0" ]]; then
-          echo "Required tool \"virtualenv\" not found."
+        if [[ "${TENV_NOPROMPT}" != "" ]]; then
+          REPLY="y"
         else
-          if [[ "${TENV_NOPROMPT}" != "" ]]; then
-            REPLY="y"
-          else
-            read -p "Directory \"${VENVPATH}\" does not exist, proceed to create it (y/n)? "
-          fi
-          if [[ "${REPLY}" = "y" ]]; then
-            virtualenv "${VENVPATH}"
-          fi
+          read -p "Directory \"${VENVPATH}\" does not exist, proceed to create it (y/n)? "
+        fi
+        if [[ "${REPLY}" = "y" ]]; then
+          python3 -m venv "${VENVPATH}"
         fi
       fi
 

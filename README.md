@@ -12,31 +12,21 @@ Example Usage
 =============
 
     ~$ tenv
-    Directory ".env" does not exist, proceed to create it (y/n)? y
-    Running virtualenv with interpreter /usr/bin/python2
-    New python executable in /home/d99kris/.env/bin/python2
-    Also creating executable in /home/d99kris/.env/bin/python
-    Installing setuptools, pkg_resources, pip, wheel...done.
-    (.env) ~$ 
-    (.env) ~$ pip install spacy
+    (.venv) ~$ pip3 install spacy
     Collecting spacy
     ...
-    (.env) ~$ tenv
+    (.venv) ~$ tenv
     ~$ 
 
 Supported Platforms
 ===================
 Tenv is primarily developed and tested on Linux, but basic functionality
 should work in macOS as well. Current version has been tested on:
-- macOS Big Sur 11.0
-- Ubuntu 20.04 LTS
+- macOS Sonoma 14.5
+- Ubuntu 22.04 LTS
 
 Installation
 ============
-Pre-requisites (Ubuntu, Mac):
-
-    pip install --user virtualenv
-
 Download the source code:
 
     git clone https://github.com/d99kris/tenv && cd tenv
@@ -85,4 +75,4 @@ Tenv is distributed under the MIT license. See LICENSE file.
 
 Keywords
 ========
-toggle, virtualenv
+toggle, virtualenv.
