@@ -2,7 +2,7 @@
 
 # tenv - toggle python virtual environment
 #
-# Copyright (c) 2018-2024, Kristofer Berggren
+# Copyright (c) 2018-2025, Kristofer Berggren
 # All rights reserved.
 #
 
@@ -23,15 +23,18 @@ showusage()
   echo "   --help         display this help and exit"
   echo "   --version      output version information and exit"
   echo ""
+  echo "Environment:"
+  echo "   PYTHON         optionally specify which python to use"
+  echo ""
   echo "Report bugs at https://github.com/d99kris/tenv"
   echo ""
 }
 
 showversion()
 {
-  echo "tenv v1.04"
+  echo "tenv v1.05"
   echo ""
-  echo "Copyright (C) 2018-2024 Kristofer Berggren"
+  echo "Copyright (C) 2018-2025 Kristofer Berggren"
   echo ""
   echo "tenv is distributed under the MIT license."
   echo ""
@@ -62,7 +65,8 @@ if [[ "${VENVPATH}" != "" ]]; then
           read -p "Directory \"${VENVPATH}\" does not exist, proceed to create it (y/n)? "
         fi
         if [[ "${REPLY}" = "y" ]]; then
-          python3 -m venv "${VENVPATH}"
+          PYTHON=${PYTHON:-python3}
+          ${PYTHON} -m venv "${VENVPATH}"
         fi
       fi
 
